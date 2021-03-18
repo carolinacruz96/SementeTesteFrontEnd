@@ -74,6 +74,8 @@ Importante: Favor não utilizar o recurso de comentários que o XD disponibiliza
 
 Você deverá criar um fork do projeto no Github e depois de finalizar o teste, pode nos enviar o endereço do fork ou enviá-lo em arquivo zip (Sem a pasta "node_modules"!!) para vagas@programasemente.com.br com o assunto "Teste para vaga de Front - Seu nome" (onde "seu nome" deve ser substituído pelo seu nome).
 
+Importante: Por favor, não baixe ou utilize forks de outros candidatos sob nenhuma hipótese, queremos avaliar sua resolução "do zero" e saberemos se você fizer isso.
+
 ### Prazo
 
 Até 3 dias úteis após a primeira conversa com o Gerente de TI

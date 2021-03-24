@@ -90,10 +90,15 @@ function watch() {
     gulp.watch('./src/**/*.js').on('change', reload);
     gulp.watch('./src/styles/**/*.scss', style);
     gulp.watch('./src/js/**/*.js').on('change', reload);
+
 }
+
+const build = gulp.series(html, images, js, style, watch);
 
 exports.html = html;
 exports.images = images;
 exports.js = js;
 exports.style = style;
-exports.default = watch;
+exports.watch = watch;
+exports.build = build;
+exports.default = build;

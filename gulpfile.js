@@ -96,4 +96,4 @@ exports.html = html;
 exports.images = images;
 exports.js = js;
 exports.style = style;
-exports.watch = watch;
+exports.default = watch;

@@ -4,21 +4,23 @@
 <head>
     <title>Teste - Semente - Front end</title>
     <link rel="stylesheet" type="text/css" media="screen" href="styles/styles.css" />
+
 </head>
 
 <body>
-    <header class="header-first">
-        <section>
-            <picture>
-            <img src="images/jornal-semente.png" alt="">
+    <header class="hFirst">
+        <section class="hTop">
+            <picture class="hTop__img">
+                <img src="images/jornal-semente.png" alt="">
             </picture>
-            <nav class="top" am-layout="horizontal">
-                <a href="#">ARTIGOS </a>|
-                <a href="#">SOBRE O PORTAL </a>|
-                <a href="#"> CONTATO</a>
+            <nav class="hTop__menu" am-layout="horizontal">
+                <a class="hTop__menu--btn" href="#">ARTIGOS </a>|
+                <a class="hTop__menu--btn" href="#">SOBRE O PORTAL </a>|
+                <a class="hTop__menu--btn" href="#"> CONTATO</a>
             </nav>
         </section>
     </header>
+
     <main>
         <section>
             <article>
@@ -26,16 +28,16 @@
                     <h1>Uma forma melhor de reconhecimento</h1>
                 </header>
                 <div class="autor">
-                    <img src="images/imagem-autor.png" alt="">
-                    <div class="texto-autor">
-                        <p>
+                    <img class="autor__img" src="images/imagem-autor.png" alt="">
+                    <div class="autor__texto">
+                        <p class="autor__texto--nome">
                             <b>Geiras Phil</b>
                         </p>
-                        <p>14 de Março de 2016 • 3 minutos de leitura</p>
+                        <p class="autor__texto--data">14 de Março de 2016 • 3 minutos de leitura</p>
                     </div>
-                    <div class="redes">
-                        <img src="images/twitter.png" alt="">
-                        <img src="images/linkedin.png" alt="">
+                    <div class="autor__redesSociais">
+                        <img class="autor__redesSociais--rede" src="images/twitter.png" alt="">
+                        <img class="autor__redesSociais--rede" src="images/linkedin.png" alt="">
                     </div>
                 </div>
             </article>
@@ -43,25 +45,34 @@
                 <header class="destaque">
                     <h4>
                         <i>Por que as empresas devem ficar atentas a essa nova forma de gerar certificados e reconhecimentos
-                            </i>
+                        </i>
                     </h4>
                 </header>
                 <p>Por vezes, quando procuramos um curso profissionalizante miramos naqueles que possuem certificados para termos
                     um registro da habilidade recém aprendida. </p>
-                <p> Desde 2011, a Mozilla vem trabalhando em uma outra forma de reconhecer habilidades não certificadas: os<u> Open
-                    Badges</u>. </p>
-                <p><u> Existem diversas páginas oficiais com muitas informações sobre eles.</u> O intuito desse artigo é apenas fazer
-                    uma introdução sobre o assunto <u> (e conquistar esse badge <a href="">aqui</a>)</u>.</p>
+                <p> Desde 2011, a Mozilla vem trabalhando em uma outra forma de reconhecer habilidades não certificadas: os
+                    <u>
+                        Open Badges
+                    </u>. </p>
+                <p>
+                    <u> Existem diversas páginas oficiais com muitas informações sobre eles.</u> O intuito desse artigo é apenas
+                    fazer uma introdução sobre o assunto
+                    <u> (e conquistar esse badge
+                        <a href="">aqui</a>)</u>.</p>
             </article>
             <article>
                 <header>
-                    <h3><b>O que são</b></h3>
+                    <h3>
+                        <b>O que são</b>
+                    </h3>
                 </header>
                 <p> Open Bagdes são registros digitais cedidos por certificadores a alguém certificado, após cumprir critérios/pré-requisitos.</p>
             </article>
             <article>
                 <header class="titulo-imagem">
-                    <h3><b>Anatomia</b></h3>
+                    <h3>
+                        <b>Anatomia</b>
+                    </h3>
                 </header>
                 <img src="images/foto-anatomia.png" alt="">
                 <cite>
@@ -73,7 +84,9 @@
             </article>
             <article>
                 <header>
-                    <h3><b>Digital badges X Open badges</b> </h3>
+                    <h3>
+                        <b>Digital badges X Open badges</b>
+                    </h3>
                 </header>
                 <p>De forma simples: um digital badge pode ser uma mera representação. Algo que pode ou não ser verdade, dependendo
                     de quem estiver o usando. </p>
@@ -83,7 +96,9 @@
             </article>
             <article>
                 <header>
-                    <h3><b>Características</b> </h3>
+                    <h3>
+                        <b>Características</b>
+                    </h3>
                 </header>
                 <p> Apresento quatro características dos OBs: </p>
                 <ul>
@@ -114,11 +129,13 @@
             </article>
             <article>
                 <header>
-                    <h3><b>Como pode ser usado</b> </h3>
+                    <h3>
+                        <b>Como pode ser usado</b>
+                    </h3>
                 </header>
-                <p> Um dos principais usos dos open badges é poder mesclar em uma mesma <u> mochila conhecimentos técnicos </u> (como
-                    por exemplo uso da suíte Office da Microsoft) <u> e competências transversais/comportamentais/pessoais</u>. (liderança,
-                    trabalho em grupo, etiqueta etc).</p>
+                <p> Um dos principais usos dos open badges é poder mesclar em uma mesma
+                    <u> mochila conhecimentos técnicos </u> (como por exemplo uso da suíte Office da Microsoft)
+                    <u> e competências transversais/comportamentais/pessoais</u>. (liderança, trabalho em grupo, etiqueta etc).</p>
 
             </article>
             <article class="destaque">
@@ -141,12 +158,15 @@
             </article>
             <article>
                 <header>
-                    <h3><b> Futuro</b> </h3>
+                    <h3>
+                        <b> Futuro</b>
+                    </h3>
                 </header>
                 <p>Apesar de já conhecer os OBs há aproximadamente 3 anos, somente este ano após uma palestra na Affero Lab,
-                    é que eles se mostraram fantásticos. Graças a palestra de <u> Lana Ramôa</u> e <u>Jefferson Rodrigues,</u> pude ver
-                    com maior clareza as profundas mudanças que poderão acontecer na Educação e também dentro da própria
-                    Affero Lab.</p>
+                    é que eles se mostraram fantásticos. Graças a palestra de
+                    <u> Lana Ramôa</u> e
+                    <u>Jefferson Rodrigues,</u> pude ver com maior clareza as profundas mudanças que poderão acontecer na Educação
+                    e também dentro da própria Affero Lab.</p>
                 <p> Na educação, existe a possibilidade de incluir todo o conteúdo aprendido por meio de vídeos no YouTube, por
                     exemplo. </p>
                 <p> Na Affero Lab, durante essa mesma palestra, foi levantada a possibilidade de serem criados open badges relacionados
@@ -156,91 +176,106 @@
                 <p>Todos sairão ganhando.
                 </p>
             </article>
-            <article>
+            <article class="links">
                 <p>
                     <b>Endereços consultados em 14 de março de 2016:</b>
                 </p>
                 <ul>
                     <li>
-                        <p> https://credly.com/badge-builder </p>
+                        <p>
+                            <a href="#"> https://credly.com/badge-builder</a>
+                        </p>
                     </li>
                     <li>
-                        <p>https://www.openbadges.me/designer.html</p>
+                        <p>
+                            <a href="#">https://www.openbadges.me/designer.html</a>
+                        </p>
                     </li>
                     <li>
-                        <p>http://openbadges.org/</p>
+                        <p>
+                            <a href="#">http://openbadges.org/</a>
+                        </p>
                     </li>
                     <li>
-                        <p>http://openbadges.org/issue</p>
+                        <p>
+                            <a href="#">http://openbadges.org/issue</a>
+                        </p>
                     </li>
                     <li>
-                        <p>https://en.wikipedia.org/wiki/Mozilla_Open_Badges </p>
+                        <p>
+                            <a href="#">https://en.wikipedia.org/wiki/Mozilla_Open_Badges</a>
+                        </p>
                     </li>
                     <li>
-                        <p>https://wiki.mozilla.org/Badges/</p>
+                        <p>
+                            <a href="#">https://wiki.mozilla.org/Badges/</a>
+                        </p>
                     </li>
                     <li>
-                        <p>https://wiki.mozilla.org/Badges/Onboarding-Issuer#Metadata</p>
+                        <p>
+                            <a href="#">https://wiki.mozilla.org/Badges/Onboarding-Issuer#Metadata</a>
+                        </p>
                     </li>
                 </ul>
                 <div class="tag">
-                    <ul>
-                        <li>#openbagdes</li>
-                        <li>#reconhecimento</li>
-                        <li>#certificado</li>
-                        <li>#registrodigital</li>
-                        <li>#metadados</li>
+                    <ul class="tag__linha">
+                        <li class="tag__linha--itens">#openbagdes</li>
+                        <li class="tag__linha--itens">#reconhecimento</li>
+                        <li class="tag__linha--itens">#certificado</li>
+                        <li class="tag__linha--itens">#registrodigital</li>
+                        <li class="tag__linha--itens">#metadados</li>
                     </ul>
                 </div>
             </article>
-            <span class="linha"></span>
-            <h2><b>Artigos relacionados</b></h2>
+            <h2>
+                <b>Artigos relacionados</b>
+            </h2>
             <div class="artigos">
-                <ul>
-                    <li>
-                        <img src="images/gatinho-coluna.png" alt="">
-                        <h4>
+                <ul class="aLinha">
+                    <li class="aLinha__item">
+                        <img class="aLinha__item--img" src="images/gatinho-coluna.png" alt="">
+                        <h4 class="aLinha__item--titulo">
                             <b>Info Credly Badge Builder</b>
                         </h4>
-                        <p>Credly hosts the largest and most-connected digital credential network.</p>
+                        <p class="aLinha__item--texto">Credly hosts the largest and most-connected digital credential network.</p>
                     </li>
-                    <li>
-                        <img src="images/gatinho-coluna.png" alt="">
-                        <h4>
+                    <li class="aLinha__item">
+                        <img class="aLinha__item--img" src="images/gatinho-coluna.png" alt="">
+                        <h4 class="aLinha__item--titulo">
                             <b>Classic Badge Designer</b>
                         </h4>
-                        <p>Powered by myknowledgemap.</p>
+                        <p class="aLinha__item--texto">Powered by myknowledgemap.</p>
                     </li>
-                    <li>
-                        <img src="images/gatinho-coluna.png" alt="">
-                        <h4>
+                    <li class="aLinha__item">
+                        <img class="aLinha__item--img" src="images/gatinho-coluna.png" alt="">
+                        <h4 class="aLinha__item--titulo">
                             <b>IMS Open Badges</b>
                         </h4>
-                        <p>Elevate your learning with Open Badges.</p>
+                        <p class="aLinha__item--texto">Elevate your learning with Open Badges.</p>
                     </li>
                 </ul>
             </div>
         </section>
     </main>
     <footer>
-        <section>
-            <picture>
+        <section class="sFooter">
+            <picture class="sFooter__img">
                 <img src="images/jornal-semente-pb.png" alt="">
             </picture>
-
-            <div class="redes">
-                <img src="images/twitter.png" alt="">
-                <img src="images/linkedin.png" alt="">
+            <div class="sFooter__redesSociais">
+                <img class="sFooter__redesSociais--redes" src="images/twitter.png" alt="">
+                <img class="sFooter__redesSociais--redes" src="images/linkedin.png" alt="">
             </div>
-            <p>
+            <p class="sFooter__texto">
                 <i>All rigths reserved.</i>
             </p>
-            <nav class="bottom" am-layout="horizontal">
-                <a class="footer" href="#">ARTIGOS |</a>
-                <a class="footer" href="#">SOBRE O PORTAL |</a>
-                <a class="footer" href="#"> CONTATO</a>
+            <nav class="sFooter__menu" am-layout="horizontal">
+                <a class="sFooter__menu--item" href="#">ARTIGOS </a>|
+                <a class="sFooter__menu--item" href="#">SOBRE O PORTAL </a>|
+                <a class="sFooter__menu--item" href="#"> CONTATO</a>
             </nav>
-            <address>Rua Zé das Coves, 171 - 3º andar <br>  São José de Pádua - XP - Brasil</address>
+            <address>Rua Zé das Coves, 171 - 3º andar
+                <br> São José de Pádua - XP - Brasil</address>
         </section>
     </footer>
 </body>

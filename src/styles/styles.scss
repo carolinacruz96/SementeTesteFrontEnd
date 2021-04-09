@@ -1,7 +1,7 @@
 
-
 @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
-@import url('https://fonts.googleapis.com/css2? family = Poppins: wght @ 200 & display = swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
 
 //Colors Variables
 $bg-color: #ffffff;
@@ -19,13 +19,18 @@ $merriweather: 'Merriweather', sans-serif;
 
 // Size Variables
 $size-h1:3rem;
+$size-autor-mobile:2rem;
+$a-linha-texto-mobile:2.813rem;
+$a-line-titulo-mobile:3.313rem;
 $size-nome-autor:0.875rem;
-$size-data:0.75rem;
+$size-data:0.85rem;
 $size-subtitulo:1.313rem;
 $size-texto:1.125rem;
 $size-citacao:0.813rem;
 $size-titulo-artigos:1.75rem;
 $size-titulos-internos:1.5rem;
+$size-data-mobile:1.55rem;
+
 
 //Spacing
 $spacing-h1:3.125rem;
@@ -33,29 +38,27 @@ $spacing-subtitulo:1.688rem;
 $spacing-texto:2.188rem;
 $spacing-citacao:1.563rem;
 
-// Styles
-body {
-  font-family: $merriweather;
-  font-weight: normal;
-  background-color: $bg-color;
-  margin: 0;
-}
+@mixin media($prop, $default, $args...) {
+    #{$prop}: $default;
 
-header{
-    max-width:100%;
-    margin: auto;
-    position: relative;
-}
+    @each $arg in $args {
+        $query: nth($arg, 1);
+        $value: nth($arg, 2);
 
-header{ 
-    section {
-        picture{
-    width: 23%;
-    display: inline-block;
-    height: 4.375rem;
-    margin: 1.188rem 0;
+        @each $queryProp, $queryValue in $query {
+            @media (#{$queryProp}: $queryValue) {
+                #{$prop}: $value;
+            }
         }
     }
+}
+
+body {
+    font-family: $merriweather;
+    font-weight: normal;
+    margin: 0;
+    background-color: #fff;
+    overflow-x:hidden;
 }
 
 section{
@@ -69,123 +72,15 @@ article{
     margin: auto auto 4.063rem auto;
 }
 
-nav{
-
-    width: auto;
-    position: absolute;
-    right: 0;
-    top: 40%;
-    color: $color-barras-top;
-
-    .top{
-        width: auto;
-        display: inline-block;
-        text-align: right;
-        vertical-align: middle;
-        top: 3rem;
-
-        right: 1.25rem;
-        position: absolute;
-        font-weight: 600;
-       
-    }
-    a{
-        margin: 0.625rem;
-        font-family:$poppins;
-        font-size: $size-data;
-        color: $color-text-menu;
-        text-decoration: none;
-    }
-}
-
-nav{
-    .bottom{
-        width: auto;
-        display: inline-block;
-        text-align: right;
-        vertical-align: middle;
-        position: absolute;
-        top: 3.563rem;
-        right: 1.875rem;
-        font-size:$size-data;
-        font-family: $poppins;
-        color:$bg-color-footer
-    }
-   
-}
-
-p,
-li{
-    word-break: break-word;
-}
-
-p {
-    a {
-    color: $color-text;
-    }
-}
-
-p{
-    display: block;
-    color: $color-text;
-    line-height: $spacing-texto;
-    font-size: $size-texto;
-    margin: 1.563rem auto;
-}
-
-address {
-    width: 25%;
-    text-align: right;
-    right: 0.875rem;
-    position: absolute;
-    font-family: "Poppins", sans-serif, medium;
-    font-size: 0.75rem;
-    color: #373737;
-    top: 6.938rem;
+header{
+    max-width:100%;
+    margin: auto;
+    position: relative;
 }
 
 footer{
     background-color: $bg-color-footer;
     height: 12.5rem;
-}
-
-footer {
-    section{
-        .redes{
-    width: 20%;
-    position: relative;
-    display: inline-block;
-    margin: 2.5rem;
-    vertical-align: text-bottom;
-    top: 0.938rem;
-            }
-        }
-}
-
-footer{
-     section{
-         picture{
-    width: 23%;
-    display: inline-block;
-    height: 4.375rem;
-    margin: 3.875rem 0;
-         }
-    }
-}
-
-footer {
-    section{
-            p {
-            display: block;
-            font-family: "Poppins", sans-serif, medium;
-            color:$color-text-footer;
-            position: absolute;
-            top: 5rem;
-            left: 13.75rem;
-            font-size: $size-data;
-            margin: 1.25rem auto;  
-             }
-        }
 }
 
 h1{
@@ -213,21 +108,68 @@ h4{
     font-size: $size-subtitulo;
     font-weight: 100;
     line-height: $spacing-subtitulo;
+}
 
+p{
+    display: block;
+    color: $color-text;
+    line-height: $spacing-texto;
+    font-size: $size-texto;
+    margin: 1.563rem auto;
+    word-break: break-word;
 }
 
 ul{
     padding-inline-start: 1rem;
 }
 
-li
-    {
-        &::marker{
+a{
+    text-decoration: none;
+}
+
+address {
+    width: 25%;
+    text-align: right;
+    position: absolute;
+    font-family: $poppins;
+    font-size: $size-data;
+    color: $color-text-footer;
+    font-weight: 600;
+    @include media(
+        right,
+        0.875rem,
+        (min-width: 600px) 1.875rem,
+        (min-width: 1000px) 0.875rem,
+        (min-width: 1400px) 0.875rem
+    ); 
+    @include media(
+        top,
+        6.938rem,
+        (min-width: 600px) 7rem,
+        (min-width: 1000px)  6.938rem,
+        (min-width: 1400px)  6.938rem
+    ); 
+    @include media(
+       width,
+       25%,
+        (min-width: 600px) 40%,
+        (min-width: 1000px) 25%,
+        (min-width: 1400px) 25%
+    ); 
+    @include media(
+      font-size,
+      $size-data,
+        (min-width: 600px) $size-data-mobile,
+        (min-width: 1000px) $size-data,
+        (min-width: 1400px) $size-data
+    ); 
+}
+
+li{
+    word-break: break-word;
+    &::marker{
     color: $color-text;
     }
-    p{
-        cursor: pointer;
-        }
 }
 
 cite{ 
@@ -240,33 +182,282 @@ cite{
     }
 }
 
-.header-first{
-    max-width:100%;
-    position: relative;
-    border-bottom: 0.063rem solid $bg-color-footer;
-  }
-
-.footer{
-    color: #373737 !important; 
+p {
+    a {
+    color: $color-text;
+    }
 }
 
-.autor{ 
+.hTop {
+    max-width: 62.5rem;
+    margin: auto;
+    position: relative;
+    &__img {
+        width: 23%;
+        display: inline-block;
+        height: 4.375rem;
+        margin: 1.188rem 0;
+    }
+    &__menu {
+        width: auto;
+        position: absolute;
+        top: 40%;
+        color: $color-barras-top;
+        @include media(
+            right,
+           0px,
+            (min-width: 600px) 2rem
+        );
+        &--btn { 
+            margin: 0.625rem;
+            font-family:$poppins;
+            color: $color-text-menu;
+            text-decoration: none;
+            font-weight: 700;
+            @include media(
+                font-size,
+                $size-data,
+                (min-width: 600px) $size-titulo-artigos,
+                (min-width: 1000px)  $size-data
+            );
+           
+        }
+    }
+}
+
+.sFooter {
+    &__img {
+        width: 22%;
+        display: inline-block;
+        height: 4.375rem;
+        margin: 3.875rem 0;
+    }
+    &__redesSociais {
+        width: 20%;
+        position: relative;
+        display: inline-block;
+        margin: 2.5rem 0;
+        vertical-align: text-bottom;
+        top: 0.938rem;
+      
+        &--redes{
+            width: 1.875rem;
+            height: 1.875rem;
+            margin-right: 0.625rem;  
+        }
+    }
+    &__texto {
+        display: block;
+        font-family: $poppins;
+        color: $color-text-footer;
+        position: absolute;
+        top: 5rem;
+        left: 13.75rem;
+        font-size: $size-data;
+        margin: 1.25rem auto;
+        @include media(
+                font-size,
+                $size-data,
+                (min-width: 600px) $size-titulo-artigos,
+                (min-width: 1000px)$size-data
+            ); 
+            @include media(
+                margin-top,
+                1.25rem,
+                (min-width: 600px) 2.25rem
+            ); 
+    }
+    &__menu {
+        width: auto;
+        position: absolute;
+        right: 0;
+        top: 40%;
+        color: $color-text-footer;
+        @include media(
+            right,
+            0,
+            (min-width: 600px) 1.25rem,
+            (min-width: 1000px)0
+        ); 
+       
+        &--item{
+            margin: 0.625rem;
+            font-family: $poppins;
+            font-size: $size-data;
+            color: $color-text-footer;
+            text-decoration: none;
+            font-weight: 600;
+            @include media(
+                font-size,
+                $size-data,
+                (min-width: 600px) $size-data-mobile,
+                (min-width: 1000px) $size-data
+            ); 
+        }
+    }
+}
+
+.autor {
     display: flex;
-    p{
-    font-size: $size-data;
-    font-family: $poppins;
-    margin: 0 0.813rem;
-    }
-    p:first-child{
-        font-size: $size-nome-autor;
-        font-family: "Poppins", sans-serif;
-        margin: 0 0.813rem;
-        padding: 0;
-        height: 1.25rem;
-    }
-    img{
+    &__img {
+        display: inline-block;
         width: 3.75rem;
-        height:3.75rem;
+        @include media(
+            height,
+            3.75rem,
+             (min-width: 600px) 5.75rem,
+             (min-width: 1000px) 3.75rem
+         ); 
+         @include media(
+           width,
+            3.75rem,
+             (min-width: 600px) 5.75rem,
+             (min-width: 1000px) 3.75rem
+         ); 
+    }
+    &__redesSociais {
+        width: 20%;
+        display: inline-block;
+        position: absolute;
+        right: 5%;
+        &--rede { 
+            width: 1.875rem;
+            height: 1.875rem;
+            margin-right: 0.625rem; 
+            @include media(
+                width,
+                1.875rem,
+                (min-width: 600px) 3rem,
+                (min-width: 1000px)  1.875rem
+            ); 
+            @include media(
+               height,
+                1.875rem,
+                (min-width: 600px) 3rem,
+                (min-width: 1000px)  1.875rem
+            ); 
+        }
+    }
+    &__texto {
+        &--nome { 
+            font-family:$poppins;
+            margin: 0 0.813rem;
+            padding: 0;
+            height: 1.25rem;
+            @include media(
+                font-size,
+                $size-data,
+                (min-width: 600px) $size-autor-mobile,
+                (min-width: 1000px) $size-data
+            ); 
+        }
+        &--data { 
+            font-family: $poppins;
+            margin: 0 0.813rem;
+        
+            @include media(
+                font-size,
+                $size-data,
+                (min-width: 600px)  $size-autor-mobile,
+                (min-width: 1000px) $size-data
+            ); 
+            @include media(
+               margin-left,
+               0 0.813rem,
+                (min-width: 600px) 1.2rem,
+                (min-width: 1000px) 0.813rem
+            ); 
+            @include media(
+                margin-top,
+                0 0.813rem,
+                 (min-width: 600px) 1.7rem,
+                 (min-width: 1000px) 0.813rem
+             ); 
+        }
+    }
+}
+
+.tag{
+    display: inline; 
+    &__linha {
+    padding:0;
+    margin:0;
+    list-style:none;
+        &--itens{
+            display: inline-block;
+            background: $bg-color-tag;
+            padding: 0.375rem;
+            font-family: $poppins;
+            color: $color-text;
+            @include media(
+                font-size,
+                $size-nome-autor,
+                (min-width: 600px) $a-linha-texto-mobile,
+                (min-width: 1000px)  $size-nome-autor
+            );
+            @include media(
+                margin,
+                2rem,
+                (min-width: 600px) 1rem,
+                (min-width: 1000px) 0.5rem
+            );
+        }
+    }
+}
+
+.aLinha{
+    &__item {
+        display: inline-block; 
+        vertical-align: top;
+        margin: 1.563rem 0.625rem 2.5rem;
+        &--img{  
+            margin: auto;
+            display: block;
+            @include media(
+                width,
+                100%,
+                (min-width: 600px) 70%
+            );
+        }
+        &--titulo{
+            color: #707070;
+            font-weight: 100;
+            line-height:$spacing-subtitulo;
+            margin: 20px auto;
+            width: 70%;
+            @include media(
+                font-size,
+               $size-subtitulo,
+                (min-width: 600px) $a-line-titulo-mobile,
+                (min-width: 1000px) $size-subtitulo
+            );
+        }
+        &--texto{
+            color: #707070;
+            font-weight: 100;
+            line-height: $spacing-subtitulo;
+            margin: 20px auto;
+            width: 70%;
+            @include media(
+                font-size,
+                $size-texto,
+                (min-width: 600px) $a-linha-texto-mobile,
+                (min-width: 1000px) $size-texto
+            );
+            @include media(
+                line-height,
+                $size-titulo-artigos,
+                (min-width: 600px) 4rem,
+                (min-width: 1000px) $size-titulo-artigos
+            );
+        }
+        
+        @include media(
+            width,
+            30%,
+            (min-width: 600px) 100%,
+            (min-width: 1000px) 30%
+        );
     }
 }
 
@@ -277,52 +468,47 @@ cite{
 }
 
 .destaque{
-    border-left: 0.188rem solid #707070;
+    border-left: 0.188rem solid $color-text;
     padding-left: 1rem;
 }
 
-.tag{
-    display: inline; 
-     ul {
-    padding:0;
-    margin:0;
-    list-style:none;
-    li{
-        display: inline-block;
-        margin: auto 0.313rem;
-        background: $bg-color-tag;
-        padding: 0.375rem;
-        font-size:$size-nome-autor;
-        font-family: $poppins;
-        color: $color-text;
-       
-        }
-    }
+.destaque{
+    border-left: 0.188rem solid $color-text;
+    padding-left: 1rem;
 }
 
-.artigos{
-        ul {
-            li {
-        display: inline-block;
-        width: 30%;
-        vertical-align: top;
-        margin: 1.563rem 0.625rem 2.5rem;
-                }
-            }
-        }
+.hFirst{
+    max-width:100%;
+    position: relative;
+    border-bottom: 0.063rem solid $bg-color-footer;
+   
+  }
 
-.redes{
-    width: 20%;
-    display: inline-block;
-    position: absolute;
-    right: 5%;
-    img{
-        width: 1.875rem;
-        height: 1.875rem;
-        margin-right: 0.625rem;
-    
-    }
-}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

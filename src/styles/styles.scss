@@ -58,6 +58,26 @@ header{
     }
 }
 
+.hTop {
+    max-width: 100%;
+    position: relative;
+    border-bottom: 0.063rem solid #B0CE09;
+    &__menu {
+            width: auto;
+            position: absolute;
+            right: 0;
+            top: 40%;
+            color: #9CB8034D;
+      &--btn {
+            margin: 0.625rem;
+            font-family: "Poppins", sans-serif, medium;
+            font-size: 0.75rem;
+            color: #9CB803;
+            text-decoration: none;
+      }
+    }
+  }
+
 section{
     max-width: 62.5rem;
     margin: auto;
@@ -240,7 +260,7 @@ cite{
     }
 }
 
-.header-first{
+.hFirst{
     max-width:100%;
     position: relative;
     border-bottom: 0.063rem solid $bg-color-footer;
